@@ -156,7 +156,7 @@
   <copyField source="dc_identifier_text"         dest="identifier_unstem_search" />
   <copyField source="dcterms_rights_holder_text" dest="dcterms_rights_holder_unstem_search" />
   <copyField source="dcterms_provenance_text"    dest="dcterms_provenance_unstem_search" />
-  <copyField source="collection_name_sms"        dest="collection_name_unstem_search" />
+  <copyField source="collection_names_text"      dest="collection_names_unstem_search" />
 
   <!-- facet fields -->
   <copyField source="dcterms_provenance_display"     dest="provenance_facet" />
