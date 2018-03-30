@@ -138,8 +138,8 @@
   <copyField source="dcterms_subject_text"  dest="textSpell" />
 
   <!-- for Autocomplete -->
-  <copyField source="dcterms_subject_text"  dest="suggest" />
-  <copyField source="dcterms_spatial_text"  dest="suggest" />
+  <!--<copyField source="dcterms_subject_text"  dest="suggest" />-->
+  <!--<copyField source="dcterms_spatial_text"  dest="suggest" />-->
 
   <!-- unstemmed fields -->
   <copyField source="dcterms_title_text"         dest="title_unstem_search" />
@@ -156,6 +156,7 @@
   <copyField source="dc_identifier_text"         dest="identifier_unstem_search" />
   <copyField source="dcterms_rights_holder_text" dest="dcterms_rights_holder_unstem_search" />
   <copyField source="dcterms_provenance_text"    dest="dcterms_provenance_unstem_search" />
+  <copyField source="collection_name_sms"        dest="collection_name_unstem_search" />
 
   <!-- facet fields -->
   <copyField source="dcterms_provenance_display"     dest="provenance_facet" />
