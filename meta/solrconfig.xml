@@ -540,6 +540,7 @@
         edm_is_shown_at_text^100
         edm_is_shown_by_text^100
         dc_right_text^100
+        collection_titles_unstem_search^100
         dc_right_unstem_search
         dcterms_title_text
         dcterms_creator_text
@@ -552,6 +553,7 @@
         dcterms_spatial_text
         dcterms_is_part_of_text
         dcterms_identifier_text
+        collection_titles_text
       </str>
       <str name="pf">
         title_unstem_search^100
@@ -569,6 +571,7 @@
         edm_is_shown_at_text^100
         edm_is_shown_by_text^100
         dc_right_text^100
+        collection_titles_unstem_search^100
         dc_right_unstem_search
         dcterms_title_text
         dcterms_creator_text
@@ -581,6 +584,7 @@
         dcterms_spatial_text
         dcterms_is_part_of_text
         dcterms_identifier_text
+        collection_titles_text
       </str>
       <str name="title_qf">
         title_unstem_search^100
@@ -637,7 +641,7 @@
       <str name="facet.field">type_facet</str>
       <str name="facet.field">medium_facet</str>
       <str name="facet.field">language_facet</str>
-      <str name="facet.field">collection_name_sms</str>
+      <str name="facet.field">collection_titles_sms</str>
       <str name="spellcheck">false</str>
       <str name="spellcheck.dictionary">default</str>
       <str name="spellcheck.onlyMorePopular">true</str>
@@ -690,6 +694,7 @@
         identifier_unstem_search^100
         edm_is_shown_at_text^100
         edm_is_shown_by_text^100
+        collection_titles_unstem_search^100
         dcterms_title_text
         dcterms_creator_text
         dcterms_contributor_text
@@ -700,6 +705,7 @@
         dcterms_spatial_text
         dcterms_is_part_of_text
         dcterms_identifier_text
+        collection_titles_text
       </str>
 
       <str name="pf">
@@ -716,6 +722,7 @@
         identifier_unstem_search^100
         edm_is_shown_at_text^100
         edm_is_shown_by_text^100
+        collection_titles_unstem_search^100
         dcterms_title_text
         dcterms_creator_text
         dcterms_contributor_text
@@ -726,6 +733,7 @@
         dcterms_spatial_text
         dcterms_is_part_of_text
         dcterms_identifier_text
+        collection_titles_text
       </str>
 
       <str name="fl">
@@ -754,7 +762,7 @@
       <str name="facet.field">medium_facet</str>
       <str name="facet.field">language_facet</str>
       <str name="facet.field">repository_name_sms</str>
-      <str name="facet.field">collection_name_sms</str>
+      <str name="facet.field">collection_titles_sms</str>
       <str name="facet.field">class_name</str>
       <str name="facet.field">portals_names_sms</str>
 
