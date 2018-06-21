@@ -141,6 +141,17 @@
   <!--<copyField source="dcterms_subject_text"  dest="suggest" />-->
   <!--<copyField source="dcterms_spatial_text"  dest="suggest" />-->
 
+  <!-- for collection values in two places support, due to Sunspot limitation -->
+  <copyField source="collection_provenance_text"  dest="provenance_facet" />
+  <copyField source="collection_provenance_text"  dest="collection_provenance_facet" />
+  <copyField source="collection_provenance_text"  dest="dcterms_provenance_display" />
+  <copyField source="collection_type_text"        dest="type_facet" />
+  <copyField source="collection_type_text"        dest="collection_type_facet" />
+  <copyField source="collection_type_text"        dest="dcterms_type_display" />
+  <copyField source="collection_spatial_text"     dest="location_facet" />
+  <copyField source="collection_spatial_text"     dest="collection_location_facet" />
+  <copyField source="collection_spatial_text"     dest="dcterms_spatial_display" />
+
   <!-- unstemmed fields -->
   <copyField source="dcterms_title_text"         dest="title_unstem_search" />
   <copyField source="dcterms_creator_text"       dest="creator_unstem_search" />
@@ -157,17 +168,6 @@
   <copyField source="dcterms_rights_holder_text" dest="dcterms_rights_holder_unstem_search" />
   <copyField source="dcterms_provenance_text"    dest="dcterms_provenance_unstem_search" />
   <copyField source="collection_titles_text"     dest="collection_titles_unstem_search" />
-
-  <!-- for collection values in two places support, due to Sunspot limitation -->
-  <copyField source="dcterms_provenance_text"  dest="provenance_facet" />
-  <copyField source="dcterms_provenance_text"  dest="collection_provenance_facet" />
-  <copyField source="dcterms_provenance_text"  dest="dcterms_provenance_display" />
-  <copyField source="dcterms_type_text"        dest="type_facet" />
-  <copyField source="dcterms_type_text"        dest="collection_type_facet" />
-  <copyField source="dcterms_type_text"        dest="dcterms_type_display" />
-  <copyField source="dcterms_spatial_text"     dest="location_facet" />
-  <copyField source="dcterms_spatial_text"     dest="collection_location_facet" />
-  <copyField source="dcterms_spatial_text"     dest="dcterms_spatial_display" />
 
   <!-- facet fields -->
   <copyField source="dcterms_provenance_display"     dest="provenance_facet" />
