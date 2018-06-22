@@ -142,15 +142,17 @@
   <!--<copyField source="dcterms_spatial_text"  dest="suggest" />-->
 
   <!-- for collection values in two places support, due to Sunspot limitation -->
-  <copyField source="collection_provenance_display"  dest="provenance_facet" />
-  <copyField source="collection_provenance_display"  dest="collection_provenance_facet" />
-  <copyField source="collection_provenance_display"  dest="dcterms_provenance_display" />
-  <copyField source="collection_type_display"        dest="type_facet" />
-  <copyField source="collection_type_display"        dest="collection_type_facet" />
-  <copyField source="collection_type_display"        dest="dcterms_type_display" />
-  <copyField source="collection_spatial_display"     dest="location_facet" />
-  <copyField source="collection_spatial_display"     dest="collection_location_facet" />
-  <copyField source="collection_spatial_display"     dest="dcterms_spatial_display" />
+  <!-- TODO: maybe try a new _display field here and see if it gets populated?
+        otherwise my only other idea is to de-index all collections and reindex :/ -->
+  <!--<copyField source="collection_provenance_display"  dest="provenance_facet" />-->
+  <!--<copyField source="collection_provenance_display"  dest="collection_provenance_facet" />-->
+  <!--<copyField source="collection_provenance_display"  dest="dcterms_provenance_display" />-->
+  <!--<copyField source="collection_type_display"        dest="type_facet" />-->
+  <!--<copyField source="collection_type_display"        dest="collection_type_facet" />-->
+  <!--<copyField source="collection_type_display"        dest="dcterms_type_display" />-->
+  <!--<copyField source="collection_spatial_display"     dest="location_facet" />-->
+  <!--<copyField source="collection_spatial_display"     dest="collection_location_facet" />-->
+  <!--<copyField source="collection_spatial_display"     dest="dcterms_spatial_display" />-->
 
   <!-- unstemmed fields -->
   <copyField source="dcterms_title_text"         dest="title_unstem_search" />
