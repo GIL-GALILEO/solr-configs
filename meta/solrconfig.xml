@@ -421,6 +421,7 @@
         dcterms_is_part_of_text
         dcterms_identifier_text
         collection_titles_text
+        fulltext_texts
       </str>
       <str name="pf">
         title_unstem_search^100
@@ -450,6 +451,7 @@
         dcterms_is_part_of_text
         dcterms_identifier_text
         collection_titles_text
+        fulltext_texts
       </str>
       <str name="title_qf">
         title_unstem_search^100
@@ -478,6 +480,9 @@
       <str name="creator_pf">
         creator_unstem_search^100
         dcterms_creator_text
+      </str>
+      <str name="fulltext_pf">
+        fulltext_texts^100
       </str>
       <int name="ps">3</int>
       <float name="tie">0.01</float>
@@ -557,6 +562,7 @@
         dcterms_is_part_of_text
         dcterms_identifier_text
         collection_titles_text
+        fulltext_texts
       </str>
       <str name="pf">
         title_unstem_search^100
@@ -588,6 +594,7 @@
         dcterms_is_part_of_text
         dcterms_identifier_text
         collection_titles_text
+        fulltext_texts
       </str>
       <str name="title_qf">
         title_unstem_search^100
@@ -620,6 +627,9 @@
       <str name="creator_pf">
         creator_unstem_search^100
         dcterms_creator_text
+      </str>
+      <str name="fulltext_pf">
+        fulltext_texts^100
       </str>
       <int name="ps">3</int>
       <float name="tie">0.01</float>
@@ -709,8 +719,8 @@
         dcterms_is_part_of_text
         dcterms_identifier_text
         collection_titles_text
+        fulltext_texts
       </str>
-
       <str name="pf">
         title_unstem_search^100
         creator_unstem_search^100
@@ -737,6 +747,7 @@
         dcterms_is_part_of_text
         dcterms_identifier_text
         collection_titles_text
+        fulltext_texts
       </str>
 
       <str name="fl">
