@@ -385,8 +385,7 @@
   <requestHandler name="/analysis/field" class="solr.FieldAnalysisRequestHandler" />
 
   <!-- Blacklight query handlers -->
-  <!--- "search" - for DLGAdmin -->
-  <requestHandler name="search" class="solr.SearchHandler" default="true">
+  <initParams path="/search,/public">
     <lst name="defaults">
       <str name="defType">dismax</str>
       <str name="echoParams">explicit</str>
@@ -399,6 +398,7 @@
         contributor_unstem_search^100
         subject_unstem_search^100
         description_unstem_search^100
+        provenance_unstem_search^100
         publisher_unstem_search^100
         date_unstem_search^100
         temporal_unstem_search^100
@@ -415,13 +415,13 @@
         dcterms_contributor_text
         dcterms_subject_text
         dcterms_description_text
+        dcterms_provenance_text
         dcterms_publisher_text
         dcterms_temporal_text
         dcterms_spatial_text
         dcterms_is_part_of_text
         dcterms_identifier_text
         collection_titles_text
-        fulltext_texts
       </str>
       <str name="pf">
         title_unstem_search^100
@@ -429,6 +429,7 @@
         contributor_unstem_search^100
         subject_unstem_search^100
         description_unstem_search^100
+        provenance_unstem_search^100
         publisher_unstem_search^100
         date_unstem_search^100
         temporal_unstem_search^100
@@ -445,44 +446,13 @@
         dcterms_contributor_text
         dcterms_subject_text
         dcterms_description_text
+        dcterms_provenance_text
         dcterms_publisher_text
         dcterms_temporal_text
         dcterms_spatial_text
         dcterms_is_part_of_text
         dcterms_identifier_text
         collection_titles_text
-        fulltext_texts
-      </str>
-      <str name="title_qf">
-        title_unstem_search^100
-        dcterms_title_text
-      </str>
-      <str name="title_pf">
-        title_unstem_search^100
-        dcterms_title_text
-      </str>
-      <str name="description_qf">
-        description_unstem_search^100
-        dcterms_description
-      </str>
-      <str name="subject_qf">
-        subject_unstem_search^100
-        dcterms_subject_text
-      </str>
-      <str name="subject_pf">
-        subject_unstem_search^100
-        dcterms_subject_text
-      </str>
-      <str name="creator_qf">
-        creator_unstem_search^100
-        dcterms_creator_text
-      </str>
-      <str name="creator_pf">
-        creator_unstem_search^100
-        dcterms_creator_text
-      </str>
-      <str name="fulltext_pf">
-        fulltext_texts^100
       </str>
       <int name="ps">3</int>
       <float name="tie">0.01</float>
@@ -492,27 +462,6 @@
       </str>
       <str name="facet">true</str>
       <str name="facet.mincount">1</str>
-      <str name="facet.field">public_b</str>
-      <str name="facet.field">dpla_b</str>
-      <str name="facet.field">counties_facet</str>
-      <str name="facet.field">provenance_facet</str>
-      <str name="facet.field">creator_facet</str>
-      <str name="facet.field">contributor_facet</str>
-      <str name="facet.field">subject_facet</str>
-      <str name="facet.field">subject_personal_facet</str>
-      <str name="facet.field">year_facet</str>
-      <str name="facet.field">temporal_facet</str>
-      <str name="facet.field">location_facet</str>
-      <str name="facet.field">format_facet</str>
-      <str name="facet.field">rights_facet</str>
-      <str name="facet.field">rights_holder_facet</str>
-      <str name="facet.field">relation_facet</str>
-      <str name="facet.field">type_facet</str>
-      <str name="facet.field">medium_facet</str>
-      <str name="facet.field">language_facet</str>
-      <str name="facet.field">collection_titles_sms</str>
-      <str name="facet.field">class_name</str>
-      <str name="facet.field">portal_names_sms</str>
       <str name="spellcheck">false</str>
       <str name="spellcheck.dictionary">default</str>
       <str name="spellcheck.onlyMorePopular">true</str>
@@ -520,148 +469,17 @@
       <str name="spellcheck.collate">true</str>
       <str name="spellcheck.count">5</str>
     </lst>
+  </initParams>
+
+  <!--- Default metadata search for DLGAdmin -->
+  <requestHandler name="search" class="solr.SearchHandler" default="true">
     <arr name="last-components">
       <str>spellcheck</str>
     </arr>
   </requestHandler>
-  <!--- "public" - for DLGAdmin -->
+
+  <!--- "public" - for DLGAdmin, a bit of a misnomer, eh? #TODO -->
   <requestHandler name="public" class="solr.SearchHandler" default="false">
-    <lst name="defaults">
-      <str name="defType">dismax</str>
-      <str name="echoParams">explicit</str>
-      <int name="rows">10</int>
-      <str name="q.alt">*:*</str>
-      <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
-      <str name="qf">
-        title_unstem_search^100
-        creator_unstem_search^100
-        contributor_unstem_search^100
-        subject_unstem_search^100
-        description_unstem_search^100
-        provenance_unstem_search^100
-        publisher_unstem_search^100
-        date_unstem_search^100
-        temporal_unstem_search^100
-        spatial_unstem_search^100
-        is_part_of_unstem_search^100
-        identifier_unstem_search^100
-        edm_is_shown_at_text^100
-        edm_is_shown_by_text^100
-        dc_right_text^100
-        collection_titles_unstem_search^100
-        dc_right_unstem_search
-        dcterms_title_text
-        dcterms_creator_text
-        dcterms_contributor_text
-        dcterms_subject_text
-        dcterms_description_text
-        dcterms_provenance_text
-        dcterms_publisher_text
-        dcterms_temporal_text
-        dcterms_spatial_text
-        dcterms_is_part_of_text
-        dcterms_identifier_text
-        collection_titles_text
-        fulltext_texts
-      </str>
-      <str name="pf">
-        title_unstem_search^100
-        creator_unstem_search^100
-        contributor_unstem_search^100
-        subject_unstem_search^100
-        description_unstem_search^100
-        provenance_unstem_search^100
-        publisher_unstem_search^100
-        date_unstem_search^100
-        temporal_unstem_search^100
-        spatial_unstem_search^100
-        is_part_of_unstem_search^100
-        identifier_unstem_search^100
-        edm_is_shown_at_text^100
-        edm_is_shown_by_text^100
-        dc_right_text^100
-        collection_titles_unstem_search^100
-        dc_right_unstem_search
-        dcterms_title_text
-        dcterms_creator_text
-        dcterms_contributor_text
-        dcterms_subject_text
-        dcterms_description_text
-        dcterms_provenance_text
-        dcterms_publisher_text
-        dcterms_temporal_text
-        dcterms_spatial_text
-        dcterms_is_part_of_text
-        dcterms_identifier_text
-        collection_titles_text
-        fulltext_texts
-      </str>
-      <str name="title_qf">
-        title_unstem_search^100
-        dcterms_title_text
-      </str>
-      <str name="title_pf">
-        title_unstem_search^100
-        dcterms_title_text
-      </str>
-      <str name="description_qf">
-        description_unstem_search^100
-        dcterms_description
-      </str>
-      <str name="description_pf">
-        description_unstem_search^100
-        dcterms_description
-      </str>
-      <str name="subject_qf">
-        subject_unstem_search^100
-        dcterms_subject_text
-      </str>
-      <str name="subject_pf">
-        subject_unstem_search^100
-        dcterms_subject_text
-      </str>
-      <str name="creator_qf">
-        creator_unstem_search^100
-        dcterms_creator_text
-      </str>
-      <str name="creator_pf">
-        creator_unstem_search^100
-        dcterms_creator_text
-      </str>
-      <str name="fulltext_pf">
-        fulltext_texts^100
-      </str>
-      <int name="ps">3</int>
-      <float name="tie">0.01</float>
-      <str name="fl">
-        *,
-        score
-      </str>
-      <str name="facet">true</str>
-      <str name="facet.mincount">1</str>
-      <str name="facet.field">counties_facet</str>
-      <str name="facet.field">provenance_facet</str>
-      <str name="facet.field">creator_facet</str>
-      <str name="facet.field">contributor_facet</str>
-      <str name="facet.field">subject_facet</str>
-      <str name="facet.field">year_facet</str>
-      <str name="facet.field">temporal_facet</str>
-      <str name="facet.field">location_facet</str>
-      <str name="facet.field">format_facet</str>
-      <str name="facet.field">rights_facet</str>
-      <str name="facet.field">rights_holder_facet</str>
-      <str name="facet.field">relation_facet</str>
-      <str name="facet.field">type_facet</str>
-      <str name="facet.field">medium_facet</str>
-      <str name="facet.field">language_facet</str>
-      <str name="facet.field">collection_titles_sms</str>
-      <str name="spellcheck">false</str>
-      <str name="spellcheck.dictionary">default</str>
-      <str name="spellcheck.onlyMorePopular">true</str>
-      <str name="spellcheck.extendedResults">true</str>
-      <str name="spellcheck.collate">true</str>
-      <str name="spellcheck.count">5</str>
-    </lst>
     <arr name="last-components">
       <str>spellcheck</str>
     </arr>
@@ -754,32 +572,8 @@
         *,
         score
       </str>
-
       <str name="facet">true</str>
       <str name="facet.mincount">1</str>
-
-      <str name="facet.field">public_b</str>
-      <str name="facet.field">dpla_b</str>
-      <str name="facet.field">provenance_facet</str>
-      <str name="facet.field">creator_facet</str>
-      <str name="facet.field">contributor_facet</str>
-      <str name="facet.field">subject_facet</str>
-      <str name="facet.field">subject_personal_facet</str>
-      <str name="facet.field">year_facet</str>
-      <str name="facet.field">temporal_facet</str>
-      <str name="facet.field">location_facet</str>
-      <str name="facet.field">format_facet</str>
-      <str name="facet.field">rights_facet</str>
-      <str name="facet.field">rights_holder_facet</str>
-      <str name="facet.field">relation_facet</str>
-      <str name="facet.field">type_facet</str>
-      <str name="facet.field">medium_facet</str>
-      <str name="facet.field">language_facet</str>
-      <str name="facet.field">repository_name_sms</str>
-      <str name="facet.field">collection_titles_sms</str>
-      <str name="facet.field">class_name</str>
-      <str name="facet.field">portals_names_sms</str>
-
       <str name="spellcheck">false</str>
       <str name="spellcheck.dictionary">default</str>
       <str name="spellcheck.onlyMorePopular">true</str>
